@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{FB718D6E-B1CF-42FF-AFE4-E67408C8E33F}</ProjectGuid>
+    <TargetFrameworkProfile />
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConcentricityBasler1inch</RootNamespace>
+    <AssemblyName>ConcentricityBasler1inch</AssemblyName>
+    <RanorexVersion>7.0</RanorexVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RanorexTargetsPath>$(MSBuildExtensionsPath)\Ranorex$(RanorexVersion)\Ranorex.MSBuild.Targets</RanorexTargetsPath>
+    <projectdefaultrepository>9ba493b1-d84f-4b18-91f8-5827bf85fffc</projectdefaultrepository>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ranorex.Core" />
+    <Reference Include="Ranorex.Plugin.Cef" />
+    <Reference Include="Ranorex.Plugin.ChromeWeb" />
+    <Reference Include="Ranorex.Plugin.Flex" />
+    <Reference Include="Ranorex.Plugin.Java" />
+    <Reference Include="Ranorex.Plugin.Mobile" />
+    <Reference Include="Ranorex.Plugin.MozillaWeb" />
+    <Reference Include="Ranorex.Plugin.Msaa" />
+    <Reference Include="Ranorex.Plugin.Office" />
+    <Reference Include="Ranorex.Plugin.Qt" />
+    <Reference Include="Ranorex.Plugin.RawText" />
+    <Reference Include="Ranorex.Plugin.Sap" />
+    <Reference Include="Ranorex.Plugin.Uia" />
+    <Reference Include="Ranorex.Plugin.Web" />
+    <Reference Include="Ranorex.Plugin.WebDriver" />
+    <Reference Include="Ranorex.Plugin.Win32" />
+    <Reference Include="Ranorex.Plugin.WinForms" />
+    <Reference Include="Ranorex.Plugin.Wpf" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <id>7a693b6d-1a1d-4f89-b3e4-1e6858dc9994</id>
+    </Compile>
+    <Compile Include="ConcentricityBasler1inchRepository.cs">
+      <BoundTo>9ba493b1-d84f-4b18-91f8-5827bf85fffc</BoundTo>
+      <DependentUpon>ConcentricityBasler1inchRepository.rxrep</DependentUpon>
+      <RepositoryCode>true</RepositoryCode>
+      <id>f702923f-82e5-43df-ab85-92e38e928d20</id>
+    </Compile>
+    <Compile Include="Program.cs">
+      <id>bdab8a00-826a-4bd2-b1d2-b2a9c2998685</id>
+    </Compile>
+    <Compile Include="Action.cs">
+      <BoundTo>bfd71bb0-2f5b-4c9d-bce4-822084ac0f27</BoundTo>
+      <DependentUpon>Action.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>0a2eee13-7b29-445e-a4c0-04cf2359f431</id>
+    </Compile>
+    <Compile Include="Action.UserCode.cs">
+      <BoundTo>bfd71bb0-2f5b-4c9d-bce4-822084ac0f27</BoundTo>
+      <DependentUpon>Action.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>5df8bb66-6ca1-4d69-91b2-a5ff6aceeb02</id>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <id>10f1dd9b-4eb8-4843-a220-d2759334414d</id>
+    </None>
+    <None Include="ConcentricityBasler1inchRepository.rximg">
+      <BoundTo>9ba493b1-d84f-4b18-91f8-5827bf85fffc</BoundTo>
+      <DependentUpon>ConcentricityBasler1inchRepository.rxrep</DependentUpon>
+      <imageblob>true</imageblob>
+      <id>d631237b-7b30-4532-ab4e-bb3e0ccde474</id>
+    </None>
+    <None Include="ConcentricityBasler1inchRepository.rxrep">
+      <id>9ba493b1-d84f-4b18-91f8-5827bf85fffc</id>
+      <repoid>2d1b5d51-7eb6-46fa-85b6-2314de7bb8d8</repoid>
+      <reporootid>e0391aac-e4cb-4975-962a-6321014a0cc5</reporootid>
+    </None>
+    <None Include="Action.rxrec">
+      <BoundTo>9ba493b1-d84f-4b18-91f8-5827bf85fffc</BoundTo>
+      <id>bfd71bb0-2f5b-4c9d-bce4-822084ac0f27</id>
+      <recordtableid>0ad3780b-a18b-4966-89f2-022cc1f618e0</recordtableid>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConcentricityBasler1inch.rxtmg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>0b27afb1-81b8-4b2a-b8e1-501d2594b543</id>
+    </Content>
+    <Content Include="ConcentricityBasler1inch.rxtst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>00ca632c-c5c6-4ed7-a61d-a338f94b86c3</id>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(RanorexTargetsPath)" Condition="Exists('$(RanorexTargetsPath)')" />
+</Project>

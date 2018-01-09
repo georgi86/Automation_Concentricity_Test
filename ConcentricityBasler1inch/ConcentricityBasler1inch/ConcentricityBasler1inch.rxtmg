@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulegroupdoc
+rxversion="7.0">
+  <testsuiteentryhierarchy>
+    <flatlistofchildren>
+      <modulegroups
+      name="ConcentricityBasler1inch"
+      id="fe967949-c7ed-4422-a0a0-3bb9e4f1cb23"/>
+    </flatlistofchildren>
+    <childhierarchy>
+      <modulegroups
+      name="ConcentricityBasler1inch"
+      id="fe967949-c7ed-4422-a0a0-3bb9e4f1cb23"/>
+    </childhierarchy>
+  </testsuiteentryhierarchy>
+</modulegroupdoc>
