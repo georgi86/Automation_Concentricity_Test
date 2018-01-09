@@ -64,6 +64,16 @@ namespace ConcentricityBasler1inch
             TestModuleRunner.Run(Instance);
         }
 
+        private static bool IsZero(double dExpression, double EPSILONE)
+        {
+            return System.Math.Abs(dExpression) < EPSILONE;
+        }
+
+        private static bool isEQ(double first, double second, double EPSILONE)
+        {
+            return IsZero(first - second, EPSILONE);
+        }
+
         /// <summary>
         /// Performs the playback of actions in this recording.
         /// </summary>
@@ -254,12 +264,53 @@ namespace ConcentricityBasler1inch
             repo.SizeacrossSTANotepad.Self.Maximize();
             Delay.Milliseconds(100);
             
-            try {
+            
                 Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='+5.9883 \r\n+19.7109 \r\n+25.6414 \r\n+5.9853 \r\n+50.0021 \r\n+0.0205 \r\n+5.9897 \r\n-0.0007 \r\n+0.0018 \r\n+5.9843 \r\n+25.0009 \r\n+0.0013 \r\n+5.9856 \r\n+50.0025 \r\n-0.0002 \r\n+5.9855 \r\n+0.0006 \r\n-24.9951 \r\n+5.9851 \r\n+49.9987 \r\n-24.9953 \r\n+5.9874 \r\n+0.0008 \r\n-49.9949 \r\n+5.9853 \r\n+25.0005 \r\n-49.9938 \r\n+5.9850 \r\n+49.9976 \r\n-49.9944 \r\n+5.9924 \r\n+0.0009 \r\n+0.0004 \r\n+5.9911 \r\n+25.0015 \r\n+0.0009 \r\n+5.9919 \r\n+50.0024 \r\n+0.0007 \r\n+5.9920 \r\n+0.0006 \r\n-24.9951 \r\n+5.9921 \r\n+50.0032 \r\n-24.9913 \r\n+5.9932 \r\n-0.0021 \r\n-49.9949 \r\n+5.9916 \r\n+24.9994 \r\n-49.9934 \r\n+5.9917 \r\n+49.9987 \r\n-49.9943 \r\n+5.9961 \r\n-0.0021 \r\n+0.0007 \r\n+5.9954 \r\n+25.0019 \r\n+0.0025 \r\n+5.9949 \r\n+50.0032 \r\n+0.0011 \r\n+5.9953 \r\n-0.0004 \r\n-24.9951 \r\n+5.9943 \r\n+50.0002 \r\n-24.9950 \r\n+5.9953 \r\n-0.0010 \r\n-49.9947 \r\n+5.9955 \r\n+24.9993 \r\n-49.9935 \r\n+5.9944 \r\n+49.9986 \r\n-49.9946 \r\n+1.9966 \r\n+14.0027 \r\n-17.0024 \r\n+1.9958 \r\n+21.9993 \r\n+0.0035 \r\n+1.9962 \r\n-0.0001 \r\n+0.0000 \r\n+1.9955 \r\n+10.9993 \r\n+0.0000 \r\n+1.9960 \r\n+21.9994 \r\n+0.0000 \r\n+1.9943 \r\n-0.0006 \r\n-7.9970 \r\n+1.9938 \r\n+10.9982 \r\n-7.9978 \r\n+1.9934 \r\n+21.9979 \r\n-7.9985 \r\n+1.9959 \r\n-0.0034 \r\n-15.9975 \r\n+1.9942 \r\n+10.9950 \r\n-15.9959 \r\n+1.9924 \r\n+21.9967 \r\n-15.9741 \r\n+1.9977 \r\n+0.0003 \r\n+0.0000 \r\n+1.9970 \r\n+10.9990 \r\n-0.0002 \r\n+1.9973 \r\n+21.9985 \r\n-0.0003 \r\n+1.9957 \r\n-0.0003 \r\n-7.9962 \r\n+1.9955 \r\n+10.9976 \r\n-7.9975 \r\n+1.9946 \r\n+21.9972 \r\n-7.9982 \r\n+1.9973 \r\n-0.0035 \r\n-15.9966 \r\n+1.9964 \r\n+10.9954 \r\n-15.9947 \r\n+1.9937 \r\n+21.9960 \r\n-15.9728 \r\n+1.9985 \r\n+0.0000 \r\n+0.0005 \r\n+1.9983 \r\n+10.9993 \r\n+0.0005 \r\n+1.9983 \r\n+21.9987 \r\n+0.0001 \r\n+1.9968 \r\n-0.0006 \r\n-7.9964 \r\n+1.9968 \r\n+10.9975 \r\n-7.9972 \r\n+1.9959 \r\n+21.9968 \r\n-7.9979 \r\n+1.9984 \r\n-0.0035 \r\n-15.9962 \r\n+1.9977 \r\n+10.9952 \r\n-15.9944 \r\n+1.9947 \r\n+21.9959 \r\n-15.9729 \r\n+5.9910 \r\n+1.9960 \r\n+21.9994 \r\n+50.0025 \r\n+0.0018 \r\n+21.9994 \r\n-15.9975 \r\n') on item 'SizeacrossSTANotepad.Text15'.", repo.SizeacrossSTANotepad.Text15Info, new RecordItemIndex(41));
                 Validate.Attribute(repo.SizeacrossSTANotepad.Text15Info, "WindowText", "+5.9883 \r\n+19.7109 \r\n+25.6414 \r\n+5.9853 \r\n+50.0021 \r\n+0.0205 \r\n+5.9897 \r\n-0.0007 \r\n+0.0018 \r\n+5.9843 \r\n+25.0009 \r\n+0.0013 \r\n+5.9856 \r\n+50.0025 \r\n-0.0002 \r\n+5.9855 \r\n+0.0006 \r\n-24.9951 \r\n+5.9851 \r\n+49.9987 \r\n-24.9953 \r\n+5.9874 \r\n+0.0008 \r\n-49.9949 \r\n+5.9853 \r\n+25.0005 \r\n-49.9938 \r\n+5.9850 \r\n+49.9976 \r\n-49.9944 \r\n+5.9924 \r\n+0.0009 \r\n+0.0004 \r\n+5.9911 \r\n+25.0015 \r\n+0.0009 \r\n+5.9919 \r\n+50.0024 \r\n+0.0007 \r\n+5.9920 \r\n+0.0006 \r\n-24.9951 \r\n+5.9921 \r\n+50.0032 \r\n-24.9913 \r\n+5.9932 \r\n-0.0021 \r\n-49.9949 \r\n+5.9916 \r\n+24.9994 \r\n-49.9934 \r\n+5.9917 \r\n+49.9987 \r\n-49.9943 \r\n+5.9961 \r\n-0.0021 \r\n+0.0007 \r\n+5.9954 \r\n+25.0019 \r\n+0.0025 \r\n+5.9949 \r\n+50.0032 \r\n+0.0011 \r\n+5.9953 \r\n-0.0004 \r\n-24.9951 \r\n+5.9943 \r\n+50.0002 \r\n-24.9950 \r\n+5.9953 \r\n-0.0010 \r\n-49.9947 \r\n+5.9955 \r\n+24.9993 \r\n-49.9935 \r\n+5.9944 \r\n+49.9986 \r\n-49.9946 \r\n+1.9966 \r\n+14.0027 \r\n-17.0024 \r\n+1.9958 \r\n+21.9993 \r\n+0.0035 \r\n+1.9962 \r\n-0.0001 \r\n+0.0000 \r\n+1.9955 \r\n+10.9993 \r\n+0.0000 \r\n+1.9960 \r\n+21.9994 \r\n+0.0000 \r\n+1.9943 \r\n-0.0006 \r\n-7.9970 \r\n+1.9938 \r\n+10.9982 \r\n-7.9978 \r\n+1.9934 \r\n+21.9979 \r\n-7.9985 \r\n+1.9959 \r\n-0.0034 \r\n-15.9975 \r\n+1.9942 \r\n+10.9950 \r\n-15.9959 \r\n+1.9924 \r\n+21.9967 \r\n-15.9741 \r\n+1.9977 \r\n+0.0003 \r\n+0.0000 \r\n+1.9970 \r\n+10.9990 \r\n-0.0002 \r\n+1.9973 \r\n+21.9985 \r\n-0.0003 \r\n+1.9957 \r\n-0.0003 \r\n-7.9962 \r\n+1.9955 \r\n+10.9976 \r\n-7.9975 \r\n+1.9946 \r\n+21.9972 \r\n-7.9982 \r\n+1.9973 \r\n-0.0035 \r\n-15.9966 \r\n+1.9964 \r\n+10.9954 \r\n-15.9947 \r\n+1.9937 \r\n+21.9960 \r\n-15.9728 \r\n+1.9985 \r\n+0.0000 \r\n+0.0005 \r\n+1.9983 \r\n+10.9993 \r\n+0.0005 \r\n+1.9983 \r\n+21.9987 \r\n+0.0001 \r\n+1.9968 \r\n-0.0006 \r\n-7.9964 \r\n+1.9968 \r\n+10.9975 \r\n-7.9972 \r\n+1.9959 \r\n+21.9968 \r\n-7.9979 \r\n+1.9984 \r\n-0.0035 \r\n-15.9962 \r\n+1.9977 \r\n+10.9952 \r\n-15.9944 \r\n+1.9947 \r\n+21.9959 \r\n-15.9729 \r\n+5.9910 \r\n+1.9960 \r\n+21.9994 \r\n+50.0025 \r\n+0.0018 \r\n+21.9994 \r\n-15.9975 \r\n", Validate.DefaultMessage, false);
                 Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(41)); }
+
+
+
+
+            //Take the generated results from the Routine procedure
+            string SizeAcrossResult = ((ConcentricityBasler1inch.ConcentricityBasler1inchRepositoryFolders.SizeacrossSTANotepadAppFolder)repo.SizeacrossSTANotepad.Text15Info.ParentFolder).Text15.TextValue;
             
+            //Actual results as read from the file
+            string[] ReadSizeAcrossResult = Regex.Split(SizeAcrossResult, "[\r\n]+");
+
+            int iNumActualRows = ReadSizeAcrossResult.Length;
+
+            //Hardcoded results
+            string HardcodedSizeAcrossResults = "+5.9883 \r\n+19.7109 \r\n+25.6414 \r\n+5.9853 \r\n+50.0021 \r\n+0.0205 \r\n+5.9897 \r\n-0.0007 \r\n+0.0018 \r\n+5.9843 \r\n+25.0009 \r\n+0.0013 \r\n+5.9856 \r\n+50.0025 \r\n-0.0002 \r\n+5.9855 \r\n+0.0006 \r\n-24.9951 \r\n+5.9851 \r\n+49.9987 \r\n-24.9953 \r\n+5.9874 \r\n+0.0008 \r\n-49.9949 \r\n+5.9853 \r\n+25.0005 \r\n-49.9938 \r\n+5.9850 \r\n+49.9976 \r\n-49.9944 \r\n+5.9924 \r\n+0.0009 \r\n+0.0004 \r\n+5.9911 \r\n+25.0015 \r\n+0.0009 \r\n+5.9919 \r\n+50.0024 \r\n+0.0007 \r\n+5.9920 \r\n+0.0006 \r\n-24.9951 \r\n+5.9921 \r\n+50.0032 \r\n-24.9913 \r\n+5.9932 \r\n-0.0021 \r\n-49.9949 \r\n+5.9916 \r\n+24.9994 \r\n-49.9934 \r\n+5.9917 \r\n+49.9987 \r\n-49.9943 \r\n+5.9961 \r\n-0.0021 \r\n+0.0007 \r\n+5.9954 \r\n+25.0019 \r\n+0.0025 \r\n+5.9949 \r\n+50.0032 \r\n+0.0011 \r\n+5.9953 \r\n-0.0004 \r\n-24.9951 \r\n+5.9943 \r\n+50.0002 \r\n-24.9950 \r\n+5.9953 \r\n-0.0010 \r\n-49.9947 \r\n+5.9955 \r\n+24.9993 \r\n-49.9935 \r\n+5.9944 \r\n+49.9986 \r\n-49.9946 \r\n+1.9966 \r\n+14.0027 \r\n-17.0024 \r\n+1.9958 \r\n+21.9993 \r\n+0.0035 \r\n+1.9962 \r\n-0.0001 \r\n+0.0000 \r\n+1.9955 \r\n+10.9993 \r\n+0.0000 \r\n+1.9960 \r\n+21.9994 \r\n+0.0000 \r\n+1.9943 \r\n-0.0006 \r\n-7.9970 \r\n+1.9938 \r\n+10.9982 \r\n-7.9978 \r\n+1.9934 \r\n+21.9979 \r\n-7.9985 \r\n+1.9959 \r\n-0.0034 \r\n-15.9975 \r\n+1.9942 \r\n+10.9950 \r\n-15.9959 \r\n+1.9924 \r\n+21.9967 \r\n-15.9741 \r\n+1.9977 \r\n+0.0003 \r\n+0.0000 \r\n+1.9970 \r\n+10.9990 \r\n-0.0002 \r\n+1.9973 \r\n+21.9985 \r\n-0.0003 \r\n+1.9957 \r\n-0.0003 \r\n-7.9962 \r\n+1.9955 \r\n+10.9976 \r\n-7.9975 \r\n+1.9946 \r\n+21.9972 \r\n-7.9982 \r\n+1.9973 \r\n-0.0035 \r\n-15.9966 \r\n+1.9964 \r\n+10.9954 \r\n-15.9947 \r\n+1.9937 \r\n+21.9960 \r\n-15.9728 \r\n+1.9985 \r\n+0.0000 \r\n+0.0005 \r\n+1.9983 \r\n+10.9993 \r\n+0.0005 \r\n+1.9983 \r\n+21.9987 \r\n+0.0001 \r\n+1.9968 \r\n-0.0006 \r\n-7.9964 \r\n+1.9968 \r\n+10.9975 \r\n-7.9972 \r\n+1.9959 \r\n+21.9968 \r\n-7.9979 \r\n+1.9984 \r\n-0.0035 \r\n-15.9962 \r\n+1.9977 \r\n+10.9952 \r\n-15.9944 \r\n+1.9947 \r\n+21.9959 \r\n-15.9729 \r\n+5.9910 \r\n+1.9960 \r\n+21.9994 \r\n+50.0025 \r\n+0.0018 \r\n+21.9994 \r\n-15.9975 \r\n";
+            
+            //Hardcoded results as read from the file
+            string[] ReadHardcodedSizeAcrossResults = Regex.Split(HardcodedSizeAcrossResults, "[\r\n]+");
+
+            int nNumHardcodedRows = ReadHardcodedSizeAcrossResults.Length;
+
+            System.Diagnostics.Debug.Assert(iNumActualRows == nNumHardcodedRows, "Total number of entries of actual and hardcoded results differ!!!");
+            
+            string[] sArrSizeAcrossResult = new string[iNumActualRows];                   //Array of strings, that contains the Actual results
+            string[] sArrHardcodedSizeAcrossResults = new string[iNumActualRows];         //Array of strings, that contains the Hardcoded results
+
+            for (int i = 0; i < iNumActualRows; ++i)
+            {
+                double dActualValue;
+                double dHardcodedValue;
+                Double.TryParse(ReadSizeAcrossResult[i], out dActualValue);               //Double is object and Try Parse is method. The idea of this method is to convert the given string to value         
+                Double.TryParse(ReadHardcodedSizeAcrossResults[i], out dHardcodedValue);
+                if (!isEQ(dActualValue, dHardcodedValue, 0.005))
+                {
+                    string errLine = "Error on line: " + (i+1);
+                    Ranorex.Report.Error("Validation", errLine);
+                    errLine = "Actual value is " + dActualValue;
+                    Ranorex.Report.Error("Actual Value is ", errLine);
+                    errLine = "Hardcoded value is " + dHardcodedValue;
+                    Ranorex.Report.Error("Expected Value is ", errLine);
+                }
+            }
+            
+
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'SizeacrossSTANotepad.Text15'.", repo.SizeacrossSTANotepad.Text15Info, new RecordItemIndex(42));
             Host.Current.CloseApplication(repo.SizeacrossSTANotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
