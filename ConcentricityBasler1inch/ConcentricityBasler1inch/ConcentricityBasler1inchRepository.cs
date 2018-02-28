@@ -126,11 +126,11 @@ namespace ConcentricityBasler1inch
             /// Creates a new SnapXUntitled  folder.
             /// </summary>
             public SnapXUntitledAppFolder(RepoGenBaseFolder parentFolder) :
-                    base("SnapXUntitled", "/form[@title='Snap-X - [Untitled]']", parentFolder, 30000, null, true, "50c1a377-372e-4c5f-85fd-35cfbc5ba70a", "")
+                    base("SnapXUntitled", "/form[@title='Snap-X - [Untitled]']", parentFolder, 100000, null, true, "50c1a377-372e-4c5f-85fd-35cfbc5ba70a", "")
             {
-                _snapxuntitledInfo = new RepoItemInfo(this, "SnapXUntitled", "titlebar[@accessiblerole='TitleBar']", 30000, null, "3dfb02bf-9626-457a-abb5-176a4d709bc2");
-                _runroutinebuttonokInfo = new RepoItemInfo(this, "RunRoutineButtonOK", "container/form/?/?/element[@controlid='59649']/?/button[@text='&OK']", 30000, null, "8277664b-deae-493f-9770-695a0dd7c4da");
-                _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element[@controlid='59648']/container/button[@text='Finish']", 30000, null, "c01b7d51-80f5-47da-9c00-845f390fc56d");
+                _snapxuntitledInfo = new RepoItemInfo(this, "SnapXUntitled", "titlebar[@accessiblerole='TitleBar']", 100000, null, "3dfb02bf-9626-457a-abb5-176a4d709bc2");
+                _runroutinebuttonokInfo = new RepoItemInfo(this, "RunRoutineButtonOK", "container/form/?/?/element[@controlid='59649']/?/button[@text='&OK' and @enabled='True']", 100000, null, "8277664b-deae-493f-9770-695a0dd7c4da");
+                _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element[@controlid='59648']/container/button[@text='Finish' and @enabled='True']", 100000, null, "c01b7d51-80f5-47da-9c00-845f390fc56d");
             }
 
             /// <summary>
