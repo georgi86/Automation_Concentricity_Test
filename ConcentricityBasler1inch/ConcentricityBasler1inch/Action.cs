@@ -263,7 +263,8 @@ namespace ConcentricityBasler1inch
 
             string SizeAcrossResult = ((ConcentricityBasler1inch.ConcentricityBasler1inchRepositoryFolders.SizeacrossSTANotepadAppFolder)repo.SizeacrossSTANotepad.Text15Info.ParentFolder).Text15.TextValue;
 
-            UtilityFunctions.SizeAcrossRun.RunSize(HardcodedSizeAcrossResults, SizeAcrossResult);
+            SizeAcrossRun.RunSize(HardcodedSizeAcrossResults, SizeAcrossResult);
+
             Delay.Milliseconds(1000);
 
 

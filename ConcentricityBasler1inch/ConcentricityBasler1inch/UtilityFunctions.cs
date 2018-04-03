@@ -38,20 +38,20 @@ namespace UtilityFunctions
         public static void RunPositiveResult()
         {
             //string Value = "Actual Value is: " + dActualValue;
-            Ranorex.Report.Error("Sucessfully Performed ");
+            Ranorex.Report.Success("Sucessfully Performed ");
         }
 
         public static void RunNegativeResult(double dActualValue, double dHardcodedValue, int nErrorLine)
         {
 
             string errLine = "Error on line: " + (nErrorLine + 1);
-            Ranorex.Report.Error("SLOW DOWN: ", errLine);
+            Ranorex.Report.Error(errLine);
 
             string ActualValue = "Actual Value is: " + dActualValue;
-            Ranorex.Report.Error("SLOW DOWN: ", ActualValue);
+            Ranorex.Report.Error(ActualValue);
 
             string HardcodedValue = "Hardcoded value is: " + dHardcodedValue;
-            Ranorex.Report.Error("SLOW DOWN: ", HardcodedValue);
+            Ranorex.Report.Error(HardcodedValue);
 
 
         }
@@ -83,13 +83,21 @@ namespace UtilityFunctions
                 double dHardcodedConcentricityValue;
                 Double.TryParse(ReadConcentricityResult[i], out dActualConcentricityValue);               //Double is object and Try Parse is method in this object. The idea of this method is to convert the given string to value         
                 Double.TryParse(ReadHardcodedConcentricityResult[i], out dHardcodedConcentricityValue);
-                if (!MathematicsConcentricity.IsConcentricityEQ(dActualConcentricityValue, dHardcodedConcentricityValue, 0.005))
+
+                try
                 {
+                    if (!MathematicsConcentricity.IsConcentricityEQ(dActualConcentricityValue, dHardcodedConcentricityValue, 0.005))
+                    {
 
-                    ReportAction.RunNegativeResult(dActualConcentricityValue, dHardcodedConcentricityValue, i);
+                        ReportAction.RunNegativeResult(dActualConcentricityValue, dHardcodedConcentricityValue, i);
 
+                    }
                 }
-               
+                catch (Exception)
+                {                    
+                    
+                }
+                             
 
             }
         }
@@ -123,17 +131,16 @@ namespace UtilityFunctions
                     Double.TryParse(ReadSizeAcrossResult[i], out dActualSizeAcrossValue);               //Double is object and Try Parse is method in this object. The idea of this method is to convert the given string to value         
                     Double.TryParse(ReadHardcodedSizeAcrossResults[i], out dHardcodedSizeAcrossValue);
 
-                    if (!Mathemeatics.isEQ(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, 0.010))
+                    if (!Mathemeatics.isEQ(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, 0.005))
                      {
 
                          ReportAction.RunNegativeResult(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, i);
                     
-                     }
-
-                   
+                     }            
 
 
-            }
+                }
+
         }//public static class RunSize
         }//public class SizeAcrossRun
 }//namespace UtilityFunctions
