@@ -76,6 +76,7 @@ namespace UtilityFunctions
             //string[] sArrConcentricityResult = new string[iNumConcentricityRows];                         //Array of strings, that contains the Actual results
             //string[] sArrHardcodedConcentricityResults = new string[iNumHardcodedRows];                   //Array of strings, that contains the Hardcoded results
 
+            bool bAllConcentricityResultsOK = true;
 
             for (int i = 0; i < iNumConcentricityRows; i++)
             {
@@ -88,18 +89,22 @@ namespace UtilityFunctions
                 {
                     if (!MathematicsConcentricity.IsConcentricityEQ(dActualConcentricityValue, dHardcodedConcentricityValue, 0.005))
                     {
+                        bAllConcentricityResultsOK = false;
 
                         ReportAction.RunNegativeResult(dActualConcentricityValue, dHardcodedConcentricityValue, i);
 
                     }
                 }
                 catch (Exception)
-                {                    
+                {                 
                     
                 }
-                             
-
             }
+
+            if (bAllConcentricityResultsOK)
+
+              ReportAction.RunPositiveResult();
+            
         }
     }
 
@@ -123,6 +128,7 @@ namespace UtilityFunctions
                 int nNumHardcodedRows = ReadHardcodedSizeAcrossResults.Length;
 
 
+            bool bAllSizeAcrossResultsOK = true;
 
                 for (int i = 0; i < iNumActualRows; i++)
                 {
@@ -131,15 +137,29 @@ namespace UtilityFunctions
                     Double.TryParse(ReadSizeAcrossResult[i], out dActualSizeAcrossValue);               //Double is object and Try Parse is method in this object. The idea of this method is to convert the given string to value         
                     Double.TryParse(ReadHardcodedSizeAcrossResults[i], out dHardcodedSizeAcrossValue);
 
-                    if (!Mathemeatics.isEQ(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, 0.005))
-                     {
+                    try
+                    {
 
-                         ReportAction.RunNegativeResult(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, i);
-                    
-                     }            
+                        if (!Mathemeatics.isEQ(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, 0.005))
+                        {
 
+                        bAllSizeAcrossResultsOK = false;
 
-                }
+                        ReportAction.RunNegativeResult(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, i);
+
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                if (bAllSizeAcrossResultsOK)
+
+                ReportAction.RunPositiveResult();
+
+            }
+
+            
 
         }//public static class RunSize
         }//public class SizeAcrossRun
