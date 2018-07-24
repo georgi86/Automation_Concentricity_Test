@@ -78,8 +78,9 @@ namespace UtilityFunctions
 
             bool bAllConcentricityResultsOK = true;
 
-            for (int i = 0; i < iNumConcentricityRows; i++)
+            for (int i = 0; i < iNumHardcodedRows; i++)
             {
+
                 double dActualConcentricityValue;
                 double dHardcodedConcentricityValue;
                 Double.TryParse(ReadConcentricityResult[i], out dActualConcentricityValue);               //Double is object and Try Parse is method in this object. The idea of this method is to convert the given string to value         
@@ -94,6 +95,9 @@ namespace UtilityFunctions
                         ReportAction.RunNegativeResult(dActualConcentricityValue, dHardcodedConcentricityValue, i);
 
                     }
+                    else
+                        ReportAction.RunPositiveResult();
+
                 }
                 catch (Exception)
                 {                 
@@ -130,7 +134,7 @@ namespace UtilityFunctions
 
             bool bAllSizeAcrossResultsOK = true;
 
-                for (int i = 0; i < iNumActualRows; i++)
+                for (int i = 0; i < nNumHardcodedRows; i++)
                 {
                     double dActualSizeAcrossValue;
                     double dHardcodedSizeAcrossValue;
@@ -148,11 +152,15 @@ namespace UtilityFunctions
                         ReportAction.RunNegativeResult(dActualSizeAcrossValue, dHardcodedSizeAcrossValue, i);
 
                         }
-                    }
+                        else
+                        ReportAction.RunPositiveResult();
+
+                }
                     catch (Exception)
                     {
 
                     }
+
                 if (bAllSizeAcrossResultsOK)
 
                 ReportAction.RunPositiveResult();

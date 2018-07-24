@@ -82,6 +82,9 @@ namespace ConcentricityBasler1inch
 
             Init();
 
+            string strConcentricityResoltsPath = "D:\\Joro\\GIT_Automations\\AutomationConcentricity\\Reports\\concentricity.STA";                    //////// DELETE FILE ////////////////
+            System.IO.File.Delete(strConcentricityResoltsPath);       
+
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.SnapXUntitled' at 701;8.", repo.SnapXUntitled.SnapXUntitledInfo, new RecordItemIndex(0));
             repo.SnapXUntitled.SnapXUntitled.Click("701;8");
             Delay.Milliseconds(200);
@@ -157,11 +160,10 @@ namespace ConcentricityBasler1inch
 
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ConcentricitySTANotepad'.", repo.ConcentricitySTANotepad.SelfInfo, new RecordItemIndex(19));
             repo.ConcentricitySTANotepad.Self.Maximize();
-            Delay.Milliseconds(300);   
-            
-                                           
+            Delay.Milliseconds(300);
 
-            string HardcodedConcentricityResult = "+0.001 \r\n+0.001 \r\n";
+             
+            string HardcodedConcentricityResult = "+0.001 \r\n+0.001";
 
             string ConcentricityResult = ((ConcentricityBasler1inch.ConcentricityBasler1inchRepositoryFolders.ConcentricitySTANotepadAppFolder)repo.ConcentricitySTANotepad.Text15Info.ParentFolder).Text15.TextValue;
 
@@ -180,6 +182,9 @@ namespace ConcentricityBasler1inch
             Delay.Milliseconds(200);
 
             Delay.Duration(10000, false);
+
+            string strSizeAcrossResoltsPath = "D:\\Joro\\GIT_Automations\\AutomationConcentricity\\Reports\\sizeacross.STA";
+            System.IO.File.Delete(strSizeAcrossResoltsPath);
 
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.SnapXUntitled' at 701;8.", repo.SnapXUntitled.SnapXUntitledInfo, new RecordItemIndex(22));
             repo.SnapXUntitled.SnapXUntitled.Click("701;8");
@@ -259,7 +264,7 @@ namespace ConcentricityBasler1inch
             Delay.Milliseconds(100);
 
 
-            string HardcodedSizeAcrossResults = "+5.9866 \r\n+5.9868 \r\n+5.9857 \r\n-0.0004 \r\n-0.0013 \r\n+5.9853 \r\n+24.9973 \r\n-0.0007 \r\n+5.9878 \r\n+50.0009 \r\n-0.0009 \r\n+5.9868 \r\n-0.0007 \r\n-24.9949 \r\n+5.9833 \r\n+49.9973 \r\n-24.9972 \r\n+5.9882 \r\n-0.0023 \r\n-49.9945 \r\n+5.9870 \r\n+24.9951 \r\n-49.9940 \r\n+5.9855 \r\n+49.9933 \r\n-49.9942 \r\n+5.9918 \r\n-0.0002 \r\n+0.0004 \r\n+5.9896 \r\n+25.0001 \r\n+0.0001 \r\n+5.9914 \r\n+50.0018 \r\n+0.0018 \r\n+5.9924 \r\n+0.0001 \r\n-24.9939 \r\n+5.9881 \r\n+49.9984 \r\n-24.9943 \r\n+5.9928 \r\n-0.0007 \r\n-49.9937 \r\n+5.9914 \r\n+24.9973 \r\n-49.9934 \r\n+5.9915 \r\n+49.9953 \r\n-49.9936 \r\n+5.9958 \r\n+0.0003 \r\n+0.0005 \r\n+5.9953 \r\n+25.0010 \r\n-0.0005 \r\n+5.9947 \r\n+50.0020 \r\n+0.0009 \r\n+5.9955 \r\n-0.0009 \r\n-24.9951 \r\n+5.9940 \r\n+49.9996 \r\n-24.9962 \r\n+5.9956 \r\n-0.0014 \r\n-49.9951 \r\n+5.9955 \r\n+24.9986 \r\n-49.9946 \r\n+5.9944 \r\n+49.9983 \r\n-49.9951 \r\n+1.9964 \r\n+13.9972 \r\n-16.9939 \r\n+1.9962 \r\n+22.0037 \r\n+0.0022 \r\n+1.9966 \r\n-0.0001 \r\n+0.0000 \r\n+1.9956 \r\n+11.0015 \r\n-0.0007 \r\n+1.9964 \r\n+22.0039 \r\n+0.0004 \r\n+1.9943 \r\n+0.0000 \r\n-8.0030 \r\n+1.9941 \r\n+11.0006 \r\n-8.0030 \r\n+1.9944 \r\n+22.0023 \r\n-8.0042 \r\n+1.9954 \r\n-0.0025 \r\n-16.0078 \r\n+1.9949 \r\n+10.9991 \r\n-16.0067 \r\n+1.9960 \r\n+22.0016 \r\n-16.0100 \r\n+1.9977 \r\n+0.0003 \r\n-0.0001 \r\n+1.9968 \r\n+11.0018 \r\n-0.0008 \r\n+1.9976 \r\n+22.0043 \r\n+0.0000 \r\n+1.9954 \r\n+0.0009 \r\n-8.0031 \r\n+1.9955 \r\n+11.0009 \r\n-8.0031 \r\n+1.9958 \r\n+22.0031 \r\n-8.0042 \r\n+1.9971 \r\n-0.0014 \r\n-16.0076 \r\n+1.9962 \r\n+10.9997 \r\n-16.0067 \r\n+1.9974 \r\n+22.0021 \r\n-16.0096 \r\n+1.9986 \r\n+0.0009 \r\n-0.0002 \r\n+1.9981 \r\n+11.0023 \r\n-0.0009 \r\n+1.9987 \r\n+22.0043 \r\n+0.0002 \r\n+1.9966 \r\n+0.0015 \r\n-8.0030 \r\n+1.9973 \r\n+11.0009 \r\n-8.0029 \r\n+1.9968 \r\n+22.0031 \r\n-8.0038 \r\n+1.9977 \r\n-0.0009 \r\n-16.0069 \r\n+1.9973 \r\n+11.0000 \r\n-16.0060 \r\n+1.9982 \r\n+22.0023 \r\n-16.0090 \r\n+5.9908 \r\n+1.9965 \r\n+22.0039 \r\n+50.0009 \r\n-0.0007 \r\n+22.0043 \r\n-16.0100 \r\n";
+            string HardcodedSizeAcrossResults = "+5.9866 \r\n+5.9868 \r\n+5.9857 \r\n-0.0004 \r\n-0.0013 \r\n+5.9853 \r\n+24.9973 \r\n-0.0007 \r\n+5.9878 \r\n+50.0009 \r\n-0.0009 \r\n+5.9868 \r\n-0.0007 \r\n-24.9949 \r\n+5.9833 \r\n+49.9973 \r\n-24.9972 \r\n+5.9882 \r\n-0.0023 \r\n-49.9945 \r\n+5.9870 \r\n+24.9951 \r\n-49.9940 \r\n+5.9855 \r\n+49.9933 \r\n-49.9942 \r\n+5.9918 \r\n-0.0002 \r\n+0.0004 \r\n+5.9896 \r\n+25.0001 \r\n+0.0001 \r\n+5.9914 \r\n+50.0018 \r\n+0.0018 \r\n+5.9924 \r\n+0.0001 \r\n-24.9939 \r\n+5.9881 \r\n+49.9984 \r\n-24.9943 \r\n+5.9928 \r\n-0.0007 \r\n-49.9937 \r\n+5.9914 \r\n+24.9973 \r\n-49.9934 \r\n+5.9915 \r\n+49.9953 \r\n-49.9936 \r\n+5.9958 \r\n+0.0003 \r\n+0.0005 \r\n+5.9953 \r\n+25.0010 \r\n-0.0005 \r\n+5.9947 \r\n+50.0020 \r\n+0.0009 \r\n+5.9955 \r\n-0.0009 \r\n-24.9951 \r\n+5.9940 \r\n+49.9996 \r\n-24.9962 \r\n+5.9956 \r\n-0.0014 \r\n-49.9951 \r\n+5.9955 \r\n+24.9986 \r\n-49.9946 \r\n+5.9944 \r\n+49.9983 \r\n-49.9951 \r\n+1.9964 \r\n+13.9972 \r\n-16.9939 \r\n+1.9962 \r\n+22.0037 \r\n+0.0022 \r\n+1.9966 \r\n-0.0001 \r\n+0.0000 \r\n+1.9956 \r\n+11.0015 \r\n-0.0007 \r\n+1.9964 \r\n+22.0039 \r\n+0.0004 \r\n+1.9943 \r\n+0.0000 \r\n-8.0030 \r\n+1.9941 \r\n+11.0006 \r\n-8.0030 \r\n+1.9944 \r\n+22.0023 \r\n-8.0042 \r\n+1.9954 \r\n-0.0025 \r\n-16.0078 \r\n+1.9949 \r\n+10.9991 \r\n-16.0067 \r\n+1.9960 \r\n+22.0016 \r\n-16.0100 \r\n+1.9977 \r\n+0.0003 \r\n-0.0001 \r\n+1.9968 \r\n+11.0018 \r\n-0.0008 \r\n+1.9976 \r\n+22.0043 \r\n+0.0000 \r\n+1.9954 \r\n+0.0009 \r\n-8.0031 \r\n+1.9955 \r\n+11.0009 \r\n-8.0031 \r\n+1.9958 \r\n+22.0031 \r\n-8.0042 \r\n+1.9971 \r\n-0.0014 \r\n-16.0076 \r\n+1.9962 \r\n+10.9997 \r\n-16.0067 \r\n+1.9974 \r\n+22.0021 \r\n-16.0096 \r\n+1.9986 \r\n+0.0009 \r\n-0.0002 \r\n+1.9981 \r\n+11.0023 \r\n-0.0009 \r\n+1.9987 \r\n+22.0043 \r\n+0.0002 \r\n+1.9966 \r\n+0.0015 \r\n-8.0030 \r\n+1.9973 \r\n+11.0009 \r\n-8.0029 \r\n+1.9968 \r\n+22.0031 \r\n-8.0038 \r\n+1.9977 \r\n-0.0009 \r\n-16.0069 \r\n+1.9973 \r\n+11.0000 \r\n-16.0060 \r\n+1.9982 \r\n+22.0023 \r\n-16.0090 \r\n+5.9908 \r\n+1.9965 \r\n+22.0039 \r\n+50.0009 \r\n-0.0007 \r\n+22.0043 \r\n-16.0100";
 
             string SizeAcrossResult = ((ConcentricityBasler1inch.ConcentricityBasler1inchRepositoryFolders.SizeacrossSTANotepadAppFolder)repo.SizeacrossSTANotepad.Text15Info.ParentFolder).Text15.TextValue;
 
