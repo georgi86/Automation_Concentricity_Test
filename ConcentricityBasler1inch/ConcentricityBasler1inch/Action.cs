@@ -181,10 +181,16 @@ namespace ConcentricityBasler1inch
             repo.SnapXUntitled.Finish.Click();
             Delay.Milliseconds(200);
 
-            Delay.Duration(10000, false);
+            Delay.Duration(4000, false);
+
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonGo' at 47;149.", repo.SnapXUntitled.ButtonGoInfo, new RecordItemIndex(0));
+            repo.SnapXUntitled.ButtonGo.Click("47;149");
+            Delay.Milliseconds(2000);
+
 
             string strSizeAcrossResoltsPath = "D:\\Joro\\GIT_Automations\\AutomationConcentricity\\Reports\\sizeacross.STA";
             System.IO.File.Delete(strSizeAcrossResoltsPath);
+            Delay.Milliseconds(200);
 
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.SnapXUntitled' at 701;8.", repo.SnapXUntitled.SnapXUntitledInfo, new RecordItemIndex(22));
             repo.SnapXUntitled.SnapXUntitled.Click("701;8");
@@ -287,6 +293,10 @@ namespace ConcentricityBasler1inch
 
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at Center.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(38));
             repo.SnapXUntitled.Finish.Click();
+            Delay.Milliseconds(200);
+
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonGo' at 47;149.", repo.SnapXUntitled.ButtonGoInfo, new RecordItemIndex(0));
+            repo.SnapXUntitled.ButtonGo.Click("47;149");
             Delay.Milliseconds(200);
 
         }

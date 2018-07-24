@@ -121,6 +121,8 @@ namespace ConcentricityBasler1inch
             RepoItemInfo _snapxuntitledInfo;
             RepoItemInfo _runroutinebuttonokInfo;
             RepoItemInfo _finishInfo;
+            RepoItemInfo _buttongoInfo;
+
 
             /// <summary>
             /// Creates a new SnapXUntitled  folder.
@@ -131,7 +133,11 @@ namespace ConcentricityBasler1inch
                 _snapxuntitledInfo = new RepoItemInfo(this, "SnapXUntitled", "titlebar[@accessiblerole='TitleBar']", 100000, null, "3dfb02bf-9626-457a-abb5-176a4d709bc2");
                 _runroutinebuttonokInfo = new RepoItemInfo(this, "RunRoutineButtonOK", "container/form/?/?/element[@controlid='59649']/?/button[@text='&OK' and @enabled='True']", 100000, null, "8277664b-deae-493f-9770-695a0dd7c4da");
                 _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element[@controlid='59648']/container/button[@text='Finish' and @enabled='True']", 100000, null, "c01b7d51-80f5-47da-9c00-845f390fc56d");
+                _buttongoInfo = new RepoItemInfo(this, "ButtonGo", "container[@controlid='59648']/form[@controlid='65281']//element[@controlid='59664']/container[@controlid='59648']/button[@text='Go']", 30000, null, "acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34");
+
             }
+
+
 
             /// <summary>
             /// The Self item.
@@ -228,6 +234,28 @@ namespace ConcentricityBasler1inch
                     return _finishInfo;
                 }
             }
+            [RepositoryItem("acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34")]
+            public virtual Ranorex.Button ButtonGo
+            {
+                get
+                {
+                    return _buttongoInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ButtonGo item info.
+            /// </summary>
+            [RepositoryItemInfo("acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34")]
+            public virtual RepoItemInfo ButtonGoInfo
+            {
+                get
+                {
+                    return _buttongoInfo;
+                }
+            }
+
+
         }
 
         /// <summary>
