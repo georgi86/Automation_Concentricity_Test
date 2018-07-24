@@ -65,10 +65,10 @@ namespace UtilityFunctions
             string ConcentricityResult = ResultRoutineInParam;
             string[] ReadConcentricityResult = Regex.Split(ConcentricityResult, "[\r\n]+");
 
-            int iNumConcentricityRows = ReadConcentricityResult.Length;
-
             string HardcodedConcentricityResult = iHardcodedInParam;
             string[] ReadHardcodedConcentricityResult = Regex.Split(HardcodedConcentricityResult, "[\r\n]+");
+
+            System.Diagnostics.Debug.Assert(ReadConcentricityResult.Length-1 == ReadHardcodedConcentricityResult.Length);   //-1 because , the routine writes new line at the end of the file
 
             int iNumHardcodedRows = ReadHardcodedConcentricityResult.Length;
 
@@ -80,11 +80,11 @@ namespace UtilityFunctions
 
             for (int i = 0; i < iNumHardcodedRows; i++)
             {
-
                 double dActualConcentricityValue;
                 double dHardcodedConcentricityValue;
                 Double.TryParse(ReadConcentricityResult[i], out dActualConcentricityValue);               //Double is object and Try Parse is method in this object. The idea of this method is to convert the given string to value         
                 Double.TryParse(ReadHardcodedConcentricityResult[i], out dHardcodedConcentricityValue);
+                Ranorex.Report.Log(Ranorex.ReportLevel.Info, "Actual=" + ReadConcentricityResult[i] + "; Expected=" + ReadHardcodedConcentricityResult[i] + ";");         
 
                 try
                 {
@@ -103,12 +103,7 @@ namespace UtilityFunctions
                 {                 
                     
                 }
-            }
-
-            if (bAllConcentricityResultsOK)
-
-              ReportAction.RunPositiveResult();
-            
+            }            
         }
     }
 
@@ -160,11 +155,7 @@ namespace UtilityFunctions
                     {
 
                     }
-
-                if (bAllSizeAcrossResultsOK)
-
-                ReportAction.RunPositiveResult();
-
+                
             }
 
             

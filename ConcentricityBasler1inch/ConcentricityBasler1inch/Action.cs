@@ -188,7 +188,7 @@ namespace ConcentricityBasler1inch
             Delay.Milliseconds(2000);
 
 
-            string strSizeAcrossResoltsPath = "D:\\Joro\\GIT_Automations\\AutomationConcentricity\\Reports\\sizeacross.STA";
+            string strSizeAcrossResoltsPath = "D:\\Joro\\GIT_Automations\\AutomationConcentricity\\Reports\\sizeacross.STA";               ///////// DELETE FILE  /////////////////
             System.IO.File.Delete(strSizeAcrossResoltsPath);
             Delay.Milliseconds(200);
 
